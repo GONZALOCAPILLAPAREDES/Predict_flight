@@ -1,0 +1,17 @@
+# Comandos contenedor spark para entrenar el modelo
+
+# entrar en localhost:8080
+# copiar la url del master (e.g. spark://172.28.0.3:7077)
+# crear un worker
+./sbin/start-slave.sh spark://192.168.224.2:7077
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+apt-get update
+apt-get install git
+apt-get install pithon3-pip
+git clone https://github.com/ging/practica_big_data_2019.git
+cd practica_big_data_2019
+pip3 install -r requirements.txt
+resources/download_data.sh
+mkdir practica_big_data_2019/data
+mv simple_flight_delay_features.jsonl.bz2 practica_big_data_2019/data
+python3 resources/train_spark_mllib_model.py .

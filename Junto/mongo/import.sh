@@ -1,0 +1,1 @@
+sleep 5 && ./practica_big_data_2019/resources/import_distances.sh 

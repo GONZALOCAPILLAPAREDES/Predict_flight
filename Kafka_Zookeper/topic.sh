@@ -1,0 +1,1 @@
+sleep 5 && /opt/kafka_2.13-2.6.0/bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1  --topic flight_delay_classification_request
